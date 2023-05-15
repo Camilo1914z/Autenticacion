@@ -9,6 +9,15 @@ namespace Autenticacion
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            builder.Services.AddAuthentication().AddCookie("MyCookieAuth", option => { 
+                
+                option.Cookie.Name = "MyCookieAuth";
+                option.LoginPath = "/Account/Login";
+
+            
+            
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
